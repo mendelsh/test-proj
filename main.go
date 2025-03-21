@@ -1,0 +1,22 @@
+package main
+
+import (
+	"fmt"
+	"net/http"
+	"log"
+)
+
+
+func main() {
+
+	http.HandleFunc("/", handleSearch)
+
+	log.Fatal(http.ListenAndServe(":8080", nil))
+
+}
+
+func handleSearch(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
+}
+
+
