@@ -10,13 +10,12 @@ import (
 func main() {
 
 	http.HandleFunc("/", handleSearch)
-	fmt.Println("Server is running on port 8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 
 }
 
 func handleSearch(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, %s! batel added this part", r.URL.Path[1:])
+	fmt.Fprintf(w, "Hello, %s! \nbatel added this part", r.URL.Path[1:])
 }
 
 
