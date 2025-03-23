@@ -21,8 +21,13 @@ func handleSearch(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello, %s! \nbatel added this part", r.URL.Path[1:])
 }
 #batel added this part before merging
+<<<<<<< HEAD
 #bla bla bla!
 #brrrrr
 #something
+=======
+#blah blah
+#brrrr
+>>>>>>> 46bcc6aacdbd1405274d89e0317e8ffb754b1ed7
 
 
