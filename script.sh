@@ -1,6 +1,7 @@
 #!/bin/bash
 
-#LOG_FILE=~/git-test/test-repo/log-file
+LOG_FILE=~/source-projects/test-proj/log-file
+COUNTER=$(tail -n 1 filename)
 
 while true; do
     HASH=$(git rev-parse master)
@@ -9,7 +10,17 @@ while true; do
     CURRENT_HASH=$(git rev-parse master)
 
     if [[ "$HASH" != "$CURRENT_HASH" ]]; then
-        echo "The commit is changed!"
+        COUNTER=$(python3 - <<END
+        # Extract version from COUNTER
+        ver = "$COUNTER"[1:]  
+        ver = int(ver)        
+        ver += 1              
+        ver = 'v' + str(ver)  
+        print(ver)            
+        END 
+        )
+        # Output the result to a log file
+        echo $COUNTER >> LOG_FILE 
     fi
     
     sleep 10
