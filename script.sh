@@ -5,7 +5,7 @@
 while true; do
     HASH=$(git rev-parse master)
 
-    git fetch origin
+    git pull origin
     CURRENT_HASH=$(git rev-parse master)
 
     if [[ "$HASH" != "$CURRENT_HASH" ]]; then
