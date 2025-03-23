@@ -26,5 +26,5 @@ print(ver)
     sleep 10
 done
 
-#madfjfjgfjf
+#madfj
 
