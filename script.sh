@@ -19,7 +19,7 @@ print(ver)
 ")
         # Output the result to a log file
         echo "Updated COUNTER: $COUNTER"
-        echo "$COUNTER" >> LOG_FILE 
+        echo "$COUNTER" >> "$LOG_FILE" 
     fi
     
     sleep 10
