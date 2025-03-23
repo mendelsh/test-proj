@@ -25,5 +25,5 @@ print(ver)
     sleep 10
 done
 
-#mashehufffhf
+#ma
 
