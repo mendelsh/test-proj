@@ -10,7 +10,7 @@ while true; do
     CURRENT_HASH=$(git rev-parse master)
 
     if [[ "$HASH" != "$CURRENT_HASH" ]]; then
-        COUNTER=$(python3 - <<'EOF'
+        COUNTER=$(python3 - <<EOF
 # Extract version from COUNTER
 ver = "$COUNTER"[1:]  
 ver = int(ver)        
