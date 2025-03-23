@@ -20,6 +20,6 @@ func main() {
 func handleSearch(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello, %s! \nbatel added this part", r.URL.Path[1:])
 }
-#ertwiftoe8rt23gtq
+#ertwiftoe
 
 
