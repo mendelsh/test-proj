@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOG_FILE=~/source-projects/test-proj/log-file
+LOG_FILE=$HOME/source-projects/test-proj/log-file
 COUNTER=$(tail -n 1 $LOG_FILE)
 
 while true; do
@@ -19,6 +19,7 @@ ver = 'v' + str(ver)
 print(ver)            
 ")
         # Output the result to a log file
+        echo "Updated COUNTER: $COUNTER"
         echo "$COUNTER" >> LOG_FILE 
     fi
     
