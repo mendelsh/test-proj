@@ -10,7 +10,7 @@ while true; do
     CURRENT_HASH=$(git rev-parse master)
 
     if [[ "$HASH" != "$CURRENT_HASH" ]]; then
-        $COUNTER=$(python3 -c "
+        COUNTER=$(python3 -c "
 # Extract version from COUNTER
 ver = '$COUNTER'[1:]  
 ver = int(ver)        
@@ -19,7 +19,7 @@ ver = 'v' + str(ver)
 print(ver)            
 ")
         # Output the result to a log file
-        echo $COUNTER >> LOG_FILE 
+        echo "$COUNTER" >> LOG_FILE 
     fi
     
     sleep 10
