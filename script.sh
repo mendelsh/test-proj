@@ -20,6 +20,8 @@ print(ver)
         # Output the result to a log file
         echo "Updated COUNTER: $COUNTER"
         echo "$COUNTER" >> "$LOG_FILE"
+        git add .
+        git commit -m "updating to $COUNTER"
         git push origin 
     fi
     
