@@ -3,6 +3,7 @@ LOG_FILE=$HOME/source-projects/test-proj/log-file
 COUNTER=$(tail -n 1 $LOG_FILE)
 
 while true; do
+    DATE=$(date +"%H:%M %d-%m-%y")
     HASH=$(git rev-parse master)
 
     git pull origin    
@@ -19,7 +20,7 @@ print(ver)
 ")
         # Output the result to a log file
         echo "Updated COUNTER: $COUNTER"
-        echo "$COUNTER" >> "$LOG_FILE"
+        echo "$COUNTER $DATE" >> "$LOG_FILE"
         git add .
         git commit -m "updating to $COUNTER"
         git push origin 
