@@ -12,7 +12,8 @@ while true; do
     if [[ "$HASH" != "$CURRENT_HASH" ]]; then
         COUNTER=$(python3 -c "
 # Extract version from COUNTER
-ver = '$COUNTER'[1:]  
+num = '$COUNTER'.split(' ')[0]
+ver = num[1:]  
 ver = int(ver)        
 ver += 1              
 ver = 'v' + str(ver)  
