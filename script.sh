@@ -1,3 +1,5 @@
+#!/bin/bash
+
 
 LOG_FILE=$HOME/source-projects/test-proj/log-file
 COUNTER=$(tail -n 1 $LOG_FILE)
