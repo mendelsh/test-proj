@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
+<<<<<<< HEAD
 
 arr=($(git tag | grep "^Rel"))
 
 arr=$(python3 -c "
-
+=======
+arr=($(git tag |grep "^Rel"))
+arr=$(python3 -c "
+import sys
+>>>>>>> e2f8a74d8d097c5d8a66c7a7b9ba3b7342858da6
 from functools import cmp_to_key
 
 arr = '${arr[*]}'.split()
@@ -19,6 +24,7 @@ def compare_elements(a, b):
             return 1
     return len(b) - len(a)
 
+<<<<<<< HEAD
 
 sorted_arr = sorted(arr, key=cmp_to_key(compare_elements))
 
@@ -26,4 +32,11 @@ print(' '.join(sorted_arr))
 ")
 
 echo "$arr"
-
+=======
+# Use sys.argv to pass the list of tags
+tags = sys.argv[1:]
+sorted_arr = sorted(tags, key=cmp_to_key(compare_elements))
+print(' '.join(sorted_arr))
+")
+echo ${arr[*]}
+>>>>>>> e2f8a74d8d097c5d8a66c7a7b9ba3b7342858da6
