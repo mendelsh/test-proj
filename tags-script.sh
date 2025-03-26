@@ -35,7 +35,8 @@ tags_diff_files() {
 
 
 echo_tags_files_difference() {
-    echo "              ======== Files Changes ========"                
+    echo "              ======== Files Changes ========"
+          
     for file in "$@"; do
         length=${#file}
         overline="‾"  # u+203e
@@ -57,7 +58,9 @@ echo_tags_files_difference() {
         echo "                ${bottom_border}"
 
         echo "              --- Git Blame ---"
-        git blame --date=short "$file"
+
+        git blame "$tag1" -- "$file" || git blame "$tag2" -- "$file"
+
         echo "------------------------------------------------"
     done
 }
