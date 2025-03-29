@@ -7,7 +7,7 @@ echo "$latest_tag"
 commit=$(git show "$latest_tag" | head -n 1 | awk '{print $2}')
 echo "commit hash: $commit"
 echo
-echo "files chaimges:"
+echo "files changes:"
 
 commits=($(git log --pretty=oneline "$commit" | nl | awk '{print $2}'))
 len=${#commits[@]}
@@ -17,7 +17,9 @@ do
    files=($(git diff --name-only "${commits[$i]}" "${commits[$i+1]}"))
    for file in "$files"
     do
-        changes["$file"]="$file"
+        if [ "$file" != "" ]; then
+            changes["$file"]="$file"
+        fi
     done    
 done
 
